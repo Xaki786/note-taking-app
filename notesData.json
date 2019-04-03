@@ -1,0 +1,12 @@
+[
+    {
+        id: uuidv1(),
+        title: 'Maximillian Node',
+        body: 'Repeat this work daily'
+    },
+    {
+        id: uuidv1(),
+        title: 'JS Bootcamp',
+        body: 'Andrew Mead Tutorials'
+    }
+]
