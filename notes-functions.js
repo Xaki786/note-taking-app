@@ -12,14 +12,29 @@ const generateNoteHTML = function(note){
     noteTitleDiv.classList.add('mr-auto') ;
     const noteLink = noteLinkDOM(note) ;
     noteTitleDiv.appendChild(noteLink) ;   
+    
+    //  DIV FOR NOTE TIME
+    const noteTimeElem = noteTimeDOM(note) ;
 
     //  DIV FOR REMOVE BUTTON
     const noteRemoveDiv = document.createElement('div') ;
     const noteRemoveButton = noteRemoveButtonDOM(notes, note) ;
     noteRemoveDiv.appendChild(noteRemoveButton) ;
-    noteElem.appendChild(noteTitleDiv) ;
+    noteElem.appendChild(noteTitleDiv) ;    
+    noteElem.appendChild(noteTimeElem)
     noteElem.appendChild(noteRemoveDiv) ;
     return noteElem ;
+}
+//=======================================================================
+//  CREATE DOM FOR NOTE TIME ELEMENT TO SHOW HOW MUCH TIME BEFORE NOTE
+//  WAS CREATED
+const noteTimeDOM = function(note){
+    const time = moment.unix(note.createdAt).fromNow();
+    const timeDiv = document.createElement('small') ;
+    timeDiv.classList.add('mr-3');
+    timeDiv.classList.add('text-muted');
+    timeDiv.textContent = `created ${time}` ;
+    return timeDiv ;
 }
 
 //=======================================================================

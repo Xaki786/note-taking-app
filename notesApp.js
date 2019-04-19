@@ -4,7 +4,7 @@ let notes = [] ;
 const filter = {
     searchText: ''
 }
-notes = getNotes()
+notes = getNotes() ;
 renderNotes(notes, filter);
 window.addEventListener('storage', (e) => {
     if(e.key === 'notes'){

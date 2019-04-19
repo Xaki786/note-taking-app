@@ -11,7 +11,8 @@ document.querySelector('#create-note').addEventListener('click', function(e){
     const newNote = {
         id: uuidv1(),
         title: '',
-        body: ''
+        body: '',
+        createdAt: moment().unix()
     } ;            
     notes.push(newNote) ;
     saveNotes(notes) ;
