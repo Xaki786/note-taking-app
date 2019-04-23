@@ -12,11 +12,15 @@ noteBodyDOM.value = note.body ;
 
 noteTitleDOM.addEventListener('input', function(e){
     note.title = e.target.value; 
+    note.updatedAt = moment().unix();
+    lastEditChange(note.updatedAt)
     saveNotes(notes) ;    
 });
 
 noteBodyDOM.addEventListener('input', function(e){
     note.body = e.target.value;     
+    note.updatedAt = moment().unix();
+    lastEditChange(note.updatedAt)
     saveNotes(notes) ;      
 });
 
@@ -29,7 +33,15 @@ window.addEventListener('storage', (e) => {
         }        
         noteTitleDOM.value = note.title ;
         noteBodyDOM.value = note.body ;
+        lastEditChange(note.updatedAt)
     }    
 })
 
-window.addEventListener('click', () => console.log('Hello'))
+const lastEditChange = function(time){
+    const timeString = `Last edited ${moment.unix(time).fromNow().substring(1)}`;
+    const lastEdited = document.querySelector('#last-edited') ;
+    lastEdited.textContent = timeString ;
+}
+if(note.updatedAt > 0){
+    lastEditChange(note.updatedAt) ;    
+}

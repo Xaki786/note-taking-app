@@ -12,7 +12,8 @@ document.querySelector('#create-note').addEventListener('click', function(e){
         id: uuidv1(),
         title: '',
         body: '',
-        createdAt: moment().unix()
+        createdAt: moment().unix(),
+        updatedAt: 0
     } ;            
     notes.push(newNote) ;
     saveNotes(notes) ;
@@ -24,3 +25,8 @@ document.querySelector('#create-note').addEventListener('click', function(e){
 }) ;
 
 //=======================================================================
+//  
+document.querySelector('#filter-by').addEventListener('change', function(e){
+    filter.sortBy = e.target.value ;    
+    renderNotes(notes, filter);
+})

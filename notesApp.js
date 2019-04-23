@@ -2,7 +2,8 @@
 //  MAIN APPLICATION
 let notes = [] ;
 const filter = {
-    searchText: ''
+    searchText: '',
+    sortBy :'byEdited'
 }
 notes = getNotes() ;
 renderNotes(notes, filter);

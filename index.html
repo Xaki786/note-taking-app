@@ -24,6 +24,12 @@
       
         <input type="submit" class="btn btn-block btn-primary mb-4" value="Create New Note" id="create-note">   
         <input type="text" class="mb-2 form-control" id="notes-filter" placeholder="Search Notes">
+        <select class="custom-select" id="filter-by">
+          <option selected>Sort By</option>
+          <option value="byEdited">Sort By Last Edited</option>
+          <option value="byCreated">Sort By Recently Created</option>
+          <option value="alphabetically">Alphabetically</option>
+        </select>
         <section id="notes-div" class="mt-3" >
             <ul id="notes-ul" class="list-group" >            
               </ul>            
@@ -31,6 +37,8 @@
     </div>
     <script src="moment.min.js"></script>
     <script src="uuid.js"></script>
+    <script src="DOM.js"></script>
+    <script src="sort-notes.js" ></script>
     <script src="notes-functions.js"></script>
     <script src="eventHandlers.js"></script>
     <script src="notesApp.js"></script>

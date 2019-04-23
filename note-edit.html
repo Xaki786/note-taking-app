@@ -16,7 +16,8 @@
 <body>
     <div class="container mt-3 w-50">
         <header class="mt-5">                    
-            <h1 class="">Edit Note <i class="h2 far fa-edit"></i></h1>
+            <h1 class="">Edit Note<i class="h2 far fa-edit"></i></h1>
+            <small class="text-muted" id="last-edited"></small>
         </header>
         <div id="note-div" class="mt-4">            
             <div class="form-group">
@@ -29,6 +30,8 @@
             <a href="/" class="btn btn-block btn-info">Go To Main Page</a>
         </div>
     </div>    
+    <script src="moment.min.js"></script>
+    <script src="uuid.js"></script>
     <script src="notes-functions.js"></script>
     <script src="edit-note.js"></script>
 </body>
