@@ -10,21 +10,21 @@ const noteBodyDOM = document.querySelector('#note-body') ;
 noteTitleDOM.value = note.title ;
 noteBodyDOM.value = note.body ;
 
-noteTitleDOM.addEventListener('input', function(e){
+noteTitleDOM.addEventListener('input', e => {
     note.title = e.target.value; 
     note.updatedAt = moment().unix();
     lastEditChange(note.updatedAt)
     saveNotes(notes) ;    
 });
 
-noteBodyDOM.addEventListener('input', function(e){
+noteBodyDOM.addEventListener('input', e => {
     note.body = e.target.value;     
     note.updatedAt = moment().unix();
     lastEditChange(note.updatedAt)
     saveNotes(notes) ;      
 });
 
-window.addEventListener('storage', (e) => {
+window.addEventListener('storage', e => {
     if(e.key === 'notes'){
         notes = getNotes();
         note = findNote(notes, searchID) ;
@@ -37,7 +37,7 @@ window.addEventListener('storage', (e) => {
     }    
 })
 
-const lastEditChange = function(time){
+const lastEditChange = time => {
     const timeString = `Last edited ${moment.unix(time).fromNow().substring(1)}`;
     const lastEdited = document.querySelector('#last-edited') ;
     lastEdited.textContent = timeString ;

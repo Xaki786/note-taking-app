@@ -1,13 +1,13 @@
 //=======================================================================
 //  FILTERING NOTES BY USING INPUT ELEMENT
-document.querySelector('#notes-filter').addEventListener('input', function(e){    
+document.querySelector('#notes-filter').addEventListener('input', e => {    
     filter.searchText = e.target.value ;
     renderNotes(notes, filter) ;
 });
 
 //=======================================================================
 //  ADDING NEW NOTE THROUGH THE FORM
-document.querySelector('#create-note').addEventListener('click', function(e){
+document.querySelector('#create-note').addEventListener('click', e => {
     const newNote = {
         id: uuidv1(),
         title: '',
@@ -26,7 +26,7 @@ document.querySelector('#create-note').addEventListener('click', function(e){
 
 //=======================================================================
 //  
-document.querySelector('#filter-by').addEventListener('change', function(e){
+document.querySelector('#filter-by').addEventListener('change', e => {
     filter.sortBy = e.target.value ;    
     renderNotes(notes, filter);
 })

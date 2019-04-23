@@ -1,7 +1,7 @@
 //=======================================================================
 // SORT NOTES BY LAST EDITED
-const sortByEdited = function(notes, filter){
-    notes.sort(function(a,b){
+const sortByEdited = (notes, filter) => {
+    notes.sort((a,b) => {
         if(a.updatedAt < b.updatedAt){
             return 1 ;
         }else if(a.updatedAt > b.updatedAt){
@@ -13,8 +13,8 @@ const sortByEdited = function(notes, filter){
 }
 //=======================================================================
 // SORT NOTES BY LAST CREATED
-const sortByCreated = function(notes, filter){
-    notes.sort(function(a,b){
+const sortByCreated = (notes, filter) => {
+    notes.sort((a,b) => {
         if(a.createdAt < b.createdAt){
             return 1 ;
         }else if(a.createdAt > b.createdAt){
@@ -26,8 +26,8 @@ const sortByCreated = function(notes, filter){
 }
 //=======================================================================
 // SORT NOTES BY ALPHABETICALLY
-const sortByAlphabet = function(notes, filter){
-    notes.sort(function(a,b){
+const sortByAlphabet = (notes, filter) => {
+    notes.sort((a,b) => {
         if(a.title.toLowerCase() > b.title.toLowerCase()){
             return 1 ;
         }else if(a.title.toLowerCase() < b.title.toLowerCase()){
@@ -39,7 +39,7 @@ const sortByAlphabet = function(notes, filter){
 }
 //=======================================================================
 // SORT NOTES
-const sortNotes = function(notes, filter){    
+const sortNotes = (notes, filter) => {    
     switch (filter.sortBy) {        
         case 'byCreated':
             sortByCreated(notes, filter)

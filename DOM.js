@@ -1,6 +1,6 @@
 //=======================================================================
 // GENERATING HTML FOR ALL THE NOTES 
-const generateNoteHTML = function(note){
+const generateNoteHTML = (note) => {
     //  NOTE ELEMENT FOR REPRESENTATION OF A COMPLETE NOTE    
     const noteElem = document.createElement('li') ;
     noteElem.classList.add('list-group-item') ;
@@ -30,7 +30,7 @@ const generateNoteHTML = function(note){
 //=======================================================================
 //  CREATE DOM FOR NOTE TIME ELEMENT TO SHOW HOW MUCH TIME BEFORE NOTE
 //  WAS CREATED
-const noteTimeDOM = function(note){
+const noteTimeDOM = (note) => {
     const timeElem = document.createElement('small') ;
     timeElem.classList.add('mr-3');
     timeElem.classList.add('text-muted');
@@ -47,7 +47,7 @@ const noteTimeDOM = function(note){
 
 //=======================================================================
 //  CREATE DOM FOR NOTE TITLE LINK TO MOVE TO THE NOTE EDITING PAGE
-const noteLinkDOM = function(note){
+const noteLinkDOM = (note) => {
     const noteTitleSpan = document.createElement('span') ;    
     const noteLink = document.createElement('a') ;
     // noteLink.href = '' ;
@@ -64,7 +64,7 @@ const noteLinkDOM = function(note){
 }
 //=======================================================================
 //  CREATE DOM FOR NOTE RTEMOVE BUTTON
-const noteRemoveButtonDOM = function(notes, note){
+const noteRemoveButtonDOM = (notes, note) => {
     const noteRemoveButton = document.createElement('button') ;
     noteRemoveButton.classList.add('btn') ;
     noteRemoveButton.classList.add('btn-danger') ;
